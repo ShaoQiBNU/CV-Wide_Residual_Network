@@ -39,7 +39,7 @@ Wide Residual Network详解
 >
 > <a href="https://www.codecogs.com/eqnedit.php?latex=depth" target="_blank"><img src="https://latex.codecogs.com/svg.latex?depth" title="depth" /></a>表示网络的深度，计算方式为：<a href="https://www.codecogs.com/eqnedit.php?latex=depth&space;=&space;d*l*N&plus;4" target="_blank"><img src="https://latex.codecogs.com/svg.latex?depth&space;=&space;d*l*N&plus;4" title="depth = d*l*N+4" /></a>，其中4代表第一个卷积层、最后一个全局平均pool层、pool之后的flatten层和全连接输出层；
 
-Img1
+![image](https://github.com/ShaoQiBNU/Wide_Residual_Network/blob/master/images/1.png)
 
 > 如图所示，该网络结构的相关参数对应如下：
 >
@@ -69,19 +69,19 @@ Img1
 
 > <a href="https://www.codecogs.com/eqnedit.php?latex=l" target="_blank"><img src="https://latex.codecogs.com/svg.latex?l" title="l" /></a>的大小即residual block内conv层数目。通过保持整体训练所用参数不变，作者研究、分析了residual block内conv层数目不同所带来的性能结果差异，具体对比结果如图所示，从中我们能够看出residual block里面包含2个conv层可带来最优的分类结果性能。
 
-img2
+![image](https://github.com/ShaoQiBNU/Wide_Residual_Network/blob/master/images/2.png)
 
 ### 3. conv宽度
 
 > <a href="https://www.codecogs.com/eqnedit.php?latex=k" target="_blank"><img src="https://latex.codecogs.com/svg.latex?k" title="k" /></a>表示Residual block的宽度因子，<a href="https://www.codecogs.com/eqnedit.php?latex=k=1" target="_blank"><img src="https://latex.codecogs.com/svg.latex?k=1" title="k=1" /></a>为原始resnet网络中的宽度。通过增加<a href="https://www.codecogs.com/eqnedit.php?latex=k" target="_blank"><img src="https://latex.codecogs.com/svg.latex?k" title="k" /></a>来加宽residual blocks，并保持整体可训练参数数目不变，作者进行了广泛的实验。结果表明加大Resnet的宽度可带来比加大其深度更大的边际性能提升，具体结果可见下图：
 
-Img3
+![image](https://github.com/ShaoQiBNU/Wide_Residual_Network/blob/master/images/3.png)
 
 ### 4. dropout引入
 
 > 加宽Residual block会带来训练参数的激增，为了避免模型陷入过拟合，作者在Residual block中引入了dropout，dropout被放在了convolutional_block中的ReLu之后，下图显示了dropout带来的性能提升：
 
-Img4
+![image](https://github.com/ShaoQiBNU/Wide_Residual_Network/blob/master/images/4.png)
 
 # 三. 实验结果对比
 
