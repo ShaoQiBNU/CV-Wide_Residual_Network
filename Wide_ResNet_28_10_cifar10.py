@@ -15,7 +15,7 @@ epochs = 20
 train_batch_size = 128
 test_batch_size = 100
 
-learning_rate = 0.001
+learning_rate = 0.0001
 display_step = 20
 
 ########## set net parameters ##########
