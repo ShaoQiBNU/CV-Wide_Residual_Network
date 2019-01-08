@@ -109,7 +109,7 @@ epochs = 20
 train_batch_size = 128
 test_batch_size = 100
 
-learning_rate = 0.001
+learning_rate = 0.0001
 display_step = 20
 
 ########## set net parameters ##########
@@ -358,11 +358,9 @@ with tf.Session() as sess:
 
 # 五. 参考
 
-https://github.com/szagoruyko/wide-residual-networks.
+https://github.com/szagoruyko/wide-residual-networks
 
-
-
-https://www.jianshu.com/p/7150963d0e93.
+https://www.jianshu.com/p/7150963d0e93
 
 
 
